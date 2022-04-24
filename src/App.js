@@ -1,5 +1,8 @@
 import './index.css';
 import React, {useState} from 'react';
+import dayjs from 'dayjs'
+dayjs.extend(relativeTime)
+
 
 function DateTime(props) {
   return (
@@ -7,11 +10,14 @@ function DateTime(props) {
   )
 }
 
-const DateTimePretty = (...props) => {
+const DateTimePretty = (props) => {
+  const incomingDate = props.date
+  let date = dayjs(incomingDate).fromNow()
+
   return  (
-    <div>
-      <DateTime date={props.date} />
-    </div>
+    <>
+      <DateTime date={date} />
+    </>
   );
 }
 
