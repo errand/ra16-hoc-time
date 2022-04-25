@@ -1,7 +1,12 @@
 import './index.css';
 import React, {useState} from 'react';
 import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+import updateLocale from 'dayjs/plugin/updateLocale'
+import 'dayjs/locale/ru'
+dayjs.locale('ru')
 dayjs.extend(relativeTime)
+dayjs.extend(updateLocale)
 
 
 function DateTime(props) {
@@ -11,12 +16,11 @@ function DateTime(props) {
 }
 
 const DateTimePretty = (props) => {
-  const incomingDate = props.date
-  let date = dayjs(incomingDate).fromNow()
-
+  const inputDate = props.date
+  const outputDate = dayjs(inputDate).fromNow()
   return  (
     <>
-      <DateTime date={date} />
+      <DateTime date={outputDate} />
     </>
   );
 }
@@ -39,19 +43,19 @@ export default function App() {
   const [list, setList] = useState([
     {
       url: 'https://www.youtube.com/embed/rN6nlNC9WQA?rel=0&amp;controls=0&amp;showinfo=0',
-      date: '2017-07-31 13:24:00'
+      date: '2022-04-25 11:01:00'
     },
     {
       url: 'https://www.youtube.com/embed/dVkK36KOcqs?rel=0&amp;controls=0&amp;showinfo=0',
-      date: '2018-03-03 12:10:00'
+      date: '2022-03-03 12:10:00'
     },
     {
       url: 'https://www.youtube.com/embed/xGRjCa49C6U?rel=0&amp;controls=0&amp;showinfo=0',
-      date: '2018-02-03 23:16:00'
+      date: '2022-04-20 23:16:00'
     },
     {
       url: 'https://www.youtube.com/embed/RK1K2bCg4J8?rel=0&amp;controls=0&amp;showinfo=0',
-      date: '2018-01-03 12:10:00'
+      date: '2022-04-25 09:00:00'
     },
     {
       url: 'https://www.youtube.com/embed/TKmGU77INaM?rel=0&amp;controls=0&amp;showinfo=0',

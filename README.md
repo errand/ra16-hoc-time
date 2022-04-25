@@ -1,8 +1,7 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/u6usnly9ctlbpcyt?svg=true)](https://ci.appveyor.com/project/errand/ra16-lifecycle-http-chat)
+[![Build status](https://ci.appveyor.com/api/projects/status/gaw9aw866m4ewys5?svg=true)](https://ci.appveyor.com/project/errand/ra16-hoc-time)
 
 
-
-[GH-Pages](https://errand.github.io/ra16-lifecycle-http-chat/)
+[GH-Pages](https://errand.github.io/ra16-hoc-time/)
 
 
 ## Available Scripts
