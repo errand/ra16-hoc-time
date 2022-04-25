@@ -28,19 +28,18 @@ const DateTimePretty = (props) => {
 function Video(props) {
   return (
     <div className="video">
-      <iframe src={props.url} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <iframe src={props.url} title={props.date} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
       <DateTimePretty date={props.date} />
     </div>
   )
 }
 
-
 function VideoList(props) {
-  return props.list.map(item => <Video url={item.url} date={item.date} />);
+  return props.list.map((item, index) => <Video key={index} url={item.url} date={item.date} />);
 }
 
 export default function App() {
-  const [list, setList] = useState([
+  const [list] = useState([
     {
       url: 'https://www.youtube.com/embed/rN6nlNC9WQA?rel=0&amp;controls=0&amp;showinfo=0',
       date: '2022-04-25 11:01:00'
